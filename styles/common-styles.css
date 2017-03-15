@@ -1,0 +1,17 @@
+.align-left {
+   float: left;
+   width: 33.33333%;
+   text-align: left;
+}
+
+.align-center {
+   float: left;
+   width: 33.33333%;
+   text-align: center;
+}
+
+.align-right {
+  float: left;
+  width: 33.33333%;
+  text-align: right;
+}

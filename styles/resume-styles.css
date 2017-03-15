@@ -1,0 +1,76 @@
+
+html {
+  font-family: Garamond, Georgia, serif;
+  font-size: 16px;  /* 16px == 1rem */
+}
+
+.resume-header {
+  text-align: center;
+}
+
+.resume-section-header {
+  text-align: right;
+  border-bottom: 2px solid #000;
+}
+
+.resume-job {
+  text-align: justify;
+}
+
+.resume-job-header {
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.resume-job-title {
+  float: left;
+  text-align: left;
+  width: 33.33333%;
+  font-weight: bold;
+}
+
+.resume-job-where {
+  float: left;
+  text-align: center;
+  width: 33.33333%;
+  font-style: italic;
+  color: green;
+}
+
+.resume-job-when {
+  float: left;
+  text-align: right;
+  width: 33.33333%;
+  font-style: italic;
+  color: blue;
+}
+
+.resume-education-header {
+  display: inline-block;
+  width: 100%;
+}
+
+.resume-education-what {
+  float: left;
+  text-align: left;
+  width: 33.33333%;
+  font-weight: bold;
+}
+
+.resume-education-where {
+  float: left;
+  text-align: center;
+  width: 33.33333%;
+  font-style: italic;
+  color: red;
+}
+
+.resume-education-when {
+  float: left;
+  text-align: right;
+  width: 33.33333%;
+  font-style: italic;
+  color: blue;
+}

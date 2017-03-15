@@ -3,25 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <title>Résumé</title>
+    <link rel="stylesheet" type="text/css" href="styles/common-styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles/resume-styles.css" />
   </head>
   <body>
-    <header>
+    <header class="resume-header">
       B. Scott Henderson<br />
       <address>
         32906 154th Ave SE<br />
         Auburn, WA  98092-5973<br />
-		<a href="tel:1-253-973-8997">Call</a>
-		<a href="mailto:henders999@gmail.com">E-mail</a>
+		    <a href="tel:1-253-973-8997">Call</a>
+		    <a href="mailto:henders999@gmail.com">E-mail</a>
       </address>
     </header>
     <section>
-      <h1>EXPERIENCE</h1>
-      <section>
-        <h3>Programmer</h3>
-        <p>
-          Weyerhaeuser Company<br />
-          March 2016 -<br />
-        </p>
+      <h1 class="resume-section-header">EXPERIENCE</h1>
+      <section class="resume-job">
+        <header class="resume-job-header">
+          <span class="resume-job-title">Programmer</span>
+          <span class="resume-job-where">Weyerhaeuser Company</span>
+          <span class="resume-job-when">March 2016 -</span>
+        </header>
         <p>
           Working in the Advanced Forestry Systems group to develop applications for extracting timber inventory data from the Forest Management System (FMS) and processing this data through various biometrics processes. FMS is a third-party system that allows users to view and edit timber inventory data.
         </p>
@@ -32,20 +34,22 @@
           Most work is done in C# with embedded SQL for accessing a SQL Server database.
         </p>
       </section>
-      <section>
-        <h3>Consultant</h3>
-        <p>
-          Weyerhaeuser Company<br />
-          March 2006 - March 2016<br />
-        </p>
+      <section class="resume-job">
+        <header class="resume-job-header">
+          <span class="resume-job-title">Consultant</span>
+          <span class="resume-job-where">Weyerhaeuser Company</span>
+          <span class="resume-job-when">March 2006 - March 2016</span>
+        </header>
         <p>
           Ongoing maintenance and enhancements for the Resource Management System (RMS). RMS is an enterprise GIS that is designed to assist forest managers in planning and decision making in their efforts to manage tree farms for maximum profit while satisfying environmental and animal habitat concerns. RMS as it currently exists is written in a mixture of C#/.NET and un-managed C++. It consists of approximately 60 separate executables, DLLs and static libraries. All spatial and tabular data is stored in an Oracle database using ESRI ArcGIS and SDE as the commercial GIS component. While initial development for RMS has long since been completed, ongoing maintenance, enhancements and necessary upgrades due to newer technology remain a challenging issue with a smaller and smaller development staff.<br />
         </p>
         <p>
-          Major enhancements/upgrades for RMS include:<br />
-          - Switching from file-based spatial data storage (coverages) to using spatial data stored in Oracle as SDE feature classes.<br />
-          - Switching tabular data entry forms from a mixture of PowerBuilder forms and C++ forms using MFC to generic metadata-driven C#/.NET forms using the DataGridView class.<br />
+          Major enhancements/upgrades for RMS include:
         </p>
+        <ul>
+          <li>Switching from file-based spatial data storage (coverages) to using spatial data stored in Oracle as SDE feature classes.</li>
+          <li>Switching tabular data entry forms from a mixture of PowerBuilder forms and C++ forms using MFC to generic metadata-driven C#/.NET forms using the DataGridView class.</li>
+        </ul>
         <p>
           Developed tools for managing and manipulating LiDAR data files (*.las) and LiDAR-derived raster products.  These tools are written in C# and include a UI also written in C#.
         </p>
@@ -53,31 +57,33 @@
           Received a Weyerhaeuser Company President's Award in early 2011 for work with LiDAR data.
         </p>
       </section>
-      <section>
-        <h3>Senior Specialist</h3>
-        <p>
-          Weyerhaeuser Company<br />
-          April 1994 - March 2006<br />
-        </p>
+      <section class="resume-job">
+        <header class="resume-job-header">
+          <span class="resume-job-title">Senior Specialist</span>
+          <span class="resume-job-where">Weyerhaeuser Company</span>
+          <span class="resume-job-when">April 1994 - March 2006</span>
+        </header>
         <p>
           Involved in all phases of analysis and development on the Resource Management System (RMS) project.  The RMS is a large Windows NT-based system designed to assist forest managers in planning and decision making in their efforts to manage tree farms for maximum profit while satisfying environmental and animal habitat concerns.
         </p>
         <p>
           Accomplishments include:<br />
-          - Customer requirements gathering and analysis.<br />
-          - Requirements Definition Document (RDD) and Project Plan with Work Breakdown Structure (WBS).<br />
-          - High-level design including some object-oriented design.<br />
-          - Team lead for a major portion of the RMS – mapping, digitizing/spatial editing, query/reporting.<br />
-          - Developed interactive/GUI query definition builder in Visual C++ 5.0 / MFC 4.2 / Windows NT 4.0.<br />
-          - Developed large amounts of supporting code for all components of the RMS.<br />
-      </p>
-      </section>
-      <section>
-        <h3>Programmer / Analyst</h3>
-        <p>
-          Weyerhaeuser Company<br />
-          June 1990 - April 1994<br />
         </p>
+        <ul>
+          <li>Customer requirements gathering and analysis.</li>
+          <li>Requirements Definition Document (RDD) and Project Plan with Work Breakdown Structure (WBS).</li>
+          <li>High-level design including some object-oriented design.</li>
+          <li>Team lead for a major portion of the RMS – mapping, digitizing/spatial editing, query/reporting.</li>
+          <li>Developed interactive/GUI query definition builder in Visual C++ 5.0 / MFC 4.2 / Windows NT 4.0.</li>
+          <li>Developed large amounts of supporting code for all components of the RMS.</li>
+        </ul>
+      </section>
+      <section class="resume-job">
+        <header class="resume-job-header">
+          <span class="resume-job-title">Programmer / Analyst</span>
+          <span class="resume-job-where">Weyerhaeuser Company</span>
+          <span class="resume-job-when">June 1990 - April 1994</span>
+        </header>
         <p>
           Developed and installed the graphical/coordinate portion of the Block Management System. Trained approximately 90 users at several locations.  This portion of the system comprises approximately 60,000 lines of C and 80x86 Assembler code.  BMS is a DOS-based PC Geographic Information System that utilizes inventory data to assist forest managers with planning and decision making.  Other uses include tracking silvicultural treatments and various environmentally sensitive areas.  This data is then uploaded to the mainframe database of record (FIRS).
         </p>
@@ -88,12 +94,12 @@
           Developed the Sales Data Collection addition to the Washington Log System.  LOGS is a transaction processing system based on an Oracle database and written in C and SQL Forms.
         </p>
       </section>
-      <section>
-        <h3>Computer Programmer / Summer Intern</h3>
-        <p>
-          Weyerhaeuser Company<br />
-          April 1988 - September 1989<br />
-        </p>
+      <section class="resume-job">
+        <header class="resume-job-header">
+          <span class="resume-job-title">Computer Programmer / Summer Intern</span>
+          <span class="resume-job-where">Weyerhaeuser Company</span>
+          <span class="resume-job-when">April 1988 - September 1989</span>
+        </header>
         <p>
           Developed two DOS-based PC data entry programs using C.
         </p>
@@ -106,71 +112,57 @@
       </section>
     </section>
     <section>
-      <h1>EDUCATION</h1>
-      <table>
-        <tr>
-          <td>Certificate in JavaScript</td>
-          <td>University of Washington</td>
-          <td>Fall 2015</td>
-          <td>Spring 2016</td>
-        </tr>
-        <tr>
-          <td>Certificate in Java Programming <sup>*</sup></td>
-          <td>University of Washington</td>
-          <td>Winter 1999</td>
-          <td>Fall 2000</td>
-        </tr>
-        <tr>
-          <td colspan="4">
-            <sup>*</sup> Completed two of three courses in Java programming.
-          </td>
-        </tr>
-        <tr>
-          <td colspan="4"></td>
-        </tr>
-        <tr>
-          <td>Certificate in C++ Programming</td>
-          <td>University of Washington</td>
-          <td>Winter 1996</td>
-          <td>Winter 1997</td>
-        </tr>
-        <tr>
-          <td>Programming Windows with C++</td>
-          <td>University of Washington</td>
-          <td></td>
-          <td>Autumn 1996</td>
-        </tr>
-        <tr>
-          <td>M.S.</td>
-          <td>Oregon State University</td>
-          <td>September 1988</td>
-          <td>June 1990</td>
-        </tr>
-        <tr>
-          <td colspan="4">
-            Majored in Computer Science.  Completed a master's project in software complexity metrics.<br />
-            Supported by a Graduate Teaching/Research Assistantship for two years.
-          </td>
-        </tr>
-        <tr>
-          <td colspan="4"></td>
-        </tr>
-        <tr>
-          <td>B.S.</td>
-          <td>University of Puget Sound</td>
-          <td>September 1984</td>
-          <td>August 1988</td>
-        </tr>
-        <tr>
-          <td colspan="4">
-            Majored in Computer Science/Mathematics with a second major in Mathematics.<br />
-            Dean's list fall 1986 - spring 1988.  Graduated with honors in Computer Science/Mathematics.
-          </td>
-        </tr>
-      </table>
+      <h1 class="resume-section-header">EDUCATION</h1>
+      <section class="resume-education">
+        <header class="resume-education-header">
+          <span class="resume-education-what">Certificate in JavaScript</span>
+          <span class="resume-education-where">University of Washington</span>
+          <span class="resume-education-when">Fall 2015 - Spring 2016</span>
+        </header>
+      </section>
+      <section class="resume-education">
+        <header class="resume-education-header">
+          <span class="resume-education-what">Certificate in Java Programming <sup>*</sup></span>
+          <span class="resume-education-where">University of Washington</span>
+          <span class="resume-education-when">Winter 1999 - Fall 2000</span>
+        </header>
+        <p>
+          <sup>*</sup> Completed two of three courses in Java programming.
+        </p>
+      </section>
+      <section class="resume-education">
+        <header class="resume-education-header">
+          <span class="resume-education-what">Certificate in C++ Programming</span>
+          <span class="resume-education-where">University of Washington</span>
+          <span class="resume-education-when">Winter 1996 - Winter 1997</span>
+        </header>
+      </section>
+      <br />
+      <section class="resume-education">
+        <header class="resume-education-header">
+          <span class="resume-education-what">M.S.</span>
+          <span class="resume-education-where">Oregon State University</span>
+          <span class="resume-education-when">September 1988 - June 1990</span>
+        </header>
+        <p>
+          Majored in Computer Science.  Completed a master's project in software complexity metrics.<br />
+          Supported by a Graduate Teaching/Research Assistantship for two years.
+        </p>
+      </section>
+      <section class="resume-education">
+        <header class="resume-education-header">
+          <span class="resume-education-what">B.S.</span>
+          <span class="resume-education-where">University of Puget Sound</span>
+          <span class="resume-education-when">September 1984 - August 1988</span>
+        </header>
+        <p>
+          Majored in Computer Science/Mathematics with a second major in Mathematics.<br />
+          Dean's list fall 1986 - spring 1988.  Graduated with honors in Computer Science/Mathematics.
+        </p>
+      </section>
     </section>
     <section>
-      <h1>COMPUTER SKILLS</h1>
+      <h1 class="resume-section-header">COMPUTER SKILLS</h1>
       <table>
         <tr>
           <td>Languages</td>
@@ -193,14 +185,15 @@
       </table>
     </section>
     <section>
-      <h1>PROFESSIONAL AFFILIATIONS</h1>
+      <h1 class="resume-section-header">PROFESSIONAL AFFILIATIONS</h1>
       <p>
         <abbr title="Association for Computing Machinery">ACM (since 1987)</abbr>
       </p>
     </section>
     <footer>
-      <br /><small>
-        Last updated on <time datetime="2017-03-08">March 8.</time>
+      <br />
+      <small>
+        Last updated on <time datetime="2017-03-08">March 8, 2017.</time>
       </small>
     </footer>
   </body>
