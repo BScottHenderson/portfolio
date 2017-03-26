@@ -1,9 +1,20 @@
-img {
-  border: 1px solid #ddd; /* Gray border */
-  border-radius: 4px;  /* Rounded border */
-  padding: 5px; /* Some padding */
+
+html {
+  padding: 1rem;
+}
+
+img.camera {
+  border: 0.1rem solid #ddd; /* Gray border */
+  border-radius: 0.5rem;  /* Rounded border */
+  padding: 0.25rem; /* Some padding */
   /*height: 300px; if we set both height and width we lose the original aspect ratio*/
-  width: 300px;
+  width: 25vw;
+}
+
+img.logo {
+  border: 0.1rem solid #ddd; /* Gray border */
+  border-radius: 1rem;  /* Rounded border */
+  height: 1rem;
 }
 
 /* Add a hover effect (blue shadow) */
