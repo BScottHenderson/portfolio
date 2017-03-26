@@ -3,6 +3,10 @@ html {
   padding: 1rem;
 }
 
+li:nth-of-type(even) {
+  color: green;
+}
+
 img.camera {
   border: 0.1rem solid #ddd; /* Gray border */
   border-radius: 0.5rem;  /* Rounded border */

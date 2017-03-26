@@ -2,6 +2,7 @@
 html {
   font-family: Garamond, Georgia, serif;
   font-size: 16px;  /* 16px == 1rem */
+  padding: 1rem;
 }
 
 .resume-header {
