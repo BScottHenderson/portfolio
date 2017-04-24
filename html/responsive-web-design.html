@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Responsive Web Design</title>
+    <link rel="stylesheet" type="text/css" href="../styles/portfolio-styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Responsive Web Design</h1>
+      <nav>
+        <a href="../index.html" class="link">Home</a>
+        <a href="./resume.html" target="_blank" class="external-link">Résumé<span>Opens a new window</span></a>
+        <a href="./responsive-web-design.html" class="link">Responsive Web Design</a>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>What is Responsive Web Design?</h2>
+        <p>
+          We could say "responsive web design" is the solution. What, then, is the problem?
+          The problem is that browsing the web can be done on many, many different sized devices.
+          Even if everyone had the same computer monitor there are a variety of screen resolutions
+          that different users may choose.  Even within the group of users with the same hardware
+          and the same screen resolution settings there are a variety of font size choices.  And,
+          of course, there are many, many choices of viewing hardware.  Everything from big-screen
+          TVs to laoptops, tablets and the latest smart phone.  There are thousands and thousands of
+          permutations of different browser window sizes.  It is impractical to have a different web
+          site design for each fo these permutations.
+        </p>
+        <p>
+          Responsive web design is a design philosophy whereby the size of various page elements
+          and even the page layout itself is relative and will therefore adjust itself based on the
+          available screen real estate.  There is no need for the web site designer and developer
+          to design or build different layouts for different screen sizes or different web pages
+          for different devices, e.g., a dedicated "mobile" web site.
+        </p>
+        <p>
+          Responsive web design also means designing a web site that responds to a user's requirements
+          as well as to a user's device requirements.  So accessibility is an important feature of
+          responsive web design (accessibility
+          &rightarrow; ac<sup>1</sup>c<sup>2</sup>e<sup>3</sup>s<sup>4</sup>s<sup>5</sup>i<sup>6</sup>b<sup>7</sup>i<sup>8</sup>l<sup>9</sup>i<sup>10</sup>t<sup>11</sup>y
+          &rightarrow; a11y).
+        </p>
+      </section>
+      <section>
+        <h2>Contact Form</h2>
+        <form method="POST" action="http://formspree.io/henders999@gmail.com">
+          <div class="grid">
+            <div class="grid-col-4">
+              <label for="message">Why are you interested in making your website responsive?</label>
+            </div>
+            <div class="grid-col-8">
+              <textarea name="message" id="message" maxlength="1024"></textarea>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="grid-col-4">
+              <label for="unique-visitors">How many unique visitors does your website receive daily?</label>
+            </div>
+            <div class="grid-col-8">
+              <input type="number" name="unique-visitors" id="unique-visitors" min="0" />
+            </div>
+          </div>
+          <div class="grid">
+            <div class="grid-col-4">
+              <label for="biggest-concern">What is your biggest concern with your current website?</label>
+            </div>
+            <div class="grid-col-8">
+              <textarea name="biggest-concern" id="biggest-concern" maxlength="1024" required></textarea>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="grid-col-4">
+              <label for="website-url">What is your website address?</label>
+            </div>
+            <div class="grid-col-8">
+              <input type="url" name="website-url" id="website-url" maxlength="256"/>
+            </div>
+          </div>
+          <div class="grid">
+            <fieldset>
+              <legend>What are your favorite pizza toppings?</legend>
+              <label>
+                <input type="checkbox" name="pizza-toppings[]" value="Pepperoni" />
+                Pepperoni
+              </label>
+              <label>
+                <input type="checkbox" name="pizza-toppings[]" value="Sausage" />
+                Sausage
+              </label>
+              <label>
+                <input type="checkbox" name="pizza-toppings[]" value="Cheese" />
+                Cheese
+              </label>
+              <label>
+                <input type="checkbox" name="pizza-toppings[]" value="Mushrooms" />
+                Mushrooms
+              </label>
+              <label>
+                <input type="checkbox" name="pizza-toppings[]" value="Peppers" />
+                Peppers
+              </label>
+              <label>
+                <input type="checkbox" name="pizza-toppings[]" value="Olives" />
+                Olives
+              </label>
+              <label>
+                <input type="checkbox" name="pizza-toppings[]" value="Other" />
+                Other
+              </label>
+            </fieldset>
+          </div>
+          <div class="grid">
+            <div class="grid-col-4">
+              <label for="email">What is your e-mail address?</label>
+            </div>
+            <div class="grid-col-8">
+              <input type="email" name="email" id="email" required />
+            </div>
+          </div>
+          <div class="grid centered-content">
+            <button type="submit" class="submit-button">Send</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
