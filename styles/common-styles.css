@@ -23,3 +23,29 @@ html {
   width: 33.33333%;
   text-align: right;
 }
+
+.page-header {
+  background-color: lightgreen;
+}
+
+.page-header h1 {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.link {
+  background-color: lightgray;
+  color: black;
+  text-decoration: none;
+}
+
+.submit-button {
+    text-align: center;
+    color: black;
+    background-color: lightgreen;
+    border: 0.1rem solid black;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    margin: auto;
+    display: inline-block;
+}
