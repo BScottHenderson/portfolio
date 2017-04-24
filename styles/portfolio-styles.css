@@ -1,10 +1,20 @@
 
+@import url("normalize.css");
+@import url("common-styles.css");
+@import url("external-link-warning.css");
+@import url("grid.css");
+
 html {
   padding: 1rem;
 }
 
-li:nth-of-type(even) {
-  color: green;
+nav {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.25rem;
+  padding: 0.5rem 0;
+  background-color: #ccc;
+  text-decoration: underline;
 }
 
 img.camera {
