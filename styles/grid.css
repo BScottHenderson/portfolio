@@ -1,0 +1,76 @@
+
+.content {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+/* Underline column header text */
+.grid-column-header {
+  text-decoration:underline;
+  font-weight: bold;
+}
+
+/* Anything can be a grid! */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* telling css that columns shouldn't flex, but generic cells should */
+.grid > [class^="grid-"] { flex: none; }  /* turn off flex for assigned width, e.g., .grid-col-X */
+.grid > .grid-cell { flex: 1; }           /* make .grid-cell fill up the unassigned width for the flex box */
+                                          /* .grid-cell == auto-size grid column */
+
+/* relative widths for each column size */
+/* based on max grid size of 12 columns */
+.grid-col-1  { width: 8.3333%; }
+.grid-col-2  { width: 16.6667%; }
+.grid-col-3  { width: 25%; }
+.grid-col-4  { width: 33.3333%; }
+.grid-col-5  { width: 41.6667%; }
+.grid-col-6  { width: 50%; }
+.grid-col-7  { width: 58.3333%; }
+.grid-col-8  { width: 66.6667%; }
+.grid-col-9  { width: 75%; }
+.grid-col-10 { width: 83.3333%; }
+.grid-col-11 { width: 91.6667%; }
+/*
+.grid-col-12 { width: 100%; }
+this is not necessary since it would be a full width column, not subdivided, not really a grid
+*/
+
+/* Adding gutters to the grid */
+.grid-guttered > [class^="grid-"] {
+  padding: 0.5rem 0.5rem 0 0;
+}
+
+/* Remove right padding for the last child, i.e., last column for each row */
+.grid-guttered > [class^="grid-"]:last-child {
+  padding-right: 0;
+}
+
+/* Add gridlines to the grid */
+.grid-gridlines > [class^="grid-"] {
+  border-width: 1px 1px 0 0;
+  border-style: solid;
+  border-color: #FF0000;
+}
+
+.grid-guttered > [class^="grid-"]:first-child {
+  border-left-width: 1px;
+}
+
+/* When using the grid to appear as a table there is no way to know */
+/* which is the last row unless it is marked somehow, e.g., with */
+/* class="grid-gridlines-bottom-row" */
+.grid-gridlines-bottom-row > [class^="grid-"] {
+  border-bottom-width: 1px;
+}
+
+/* make any element's content vertically & horizontally centered */
+/* this is great for links & buttons */
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
