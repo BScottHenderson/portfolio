@@ -3,7 +3,11 @@
 
 html {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;  /* 16px == 1rem */
+  font-size: 100%;
+}
+
+.hidden {
+  display: none;
 }
 
 .align-left {
@@ -19,12 +23,13 @@ html {
 }
 
 .align-right {
-  float: left;
+  float: right;
   width: 33.33333%;
   text-align: right;
 }
 
 .page-header {
+  color: black;
   background-color: lightgreen;
 }
 
