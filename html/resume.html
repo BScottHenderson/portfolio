@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Résumé</title>
-    
+
     <link rel="stylesheet" type="text/css" href="../styles/normalize.css" />
     <link rel="stylesheet" type="text/css" href="../styles/common-styles.css" />
     <link rel="stylesheet" type="text/css" href="../styles/resume-styles.css" />
@@ -17,33 +17,39 @@
   </head>
   <body>
     <header class="resume-header">
-      <div class="h-card">
-        <div class="p-name">B. Scott Henderson</div>
+      <div class="h-card vcard">
+        <div class="p-name fn">B. Scott Henderson</div>
+        <span class="p-name n hidden"> <!-- make sure to hide this version of the name -->
+          <abbr class="p-given-name given-name" title="B.">B.</abbr>
+          <span class="p-additional-name additional-name">Scott</span>
+          <span class="p-family-name family-name">Henderson</span>
+        </span>
         <address>
-          <div class="p-street-address">
-            32906 154th Ave SE
+          <div class="p-adr adr">
+            <div class="p-street-address street-address">
+              32906 154th Ave SE
+            </div>
+            <span class="p-locality locality">Auburn</span>
+            <span class="p-region region">WA</span>
+            <span class="p-postal-code postal-code">98092-5973</span>
+            <div class="p-country-name country-name">United States</div>
+            <div>
+              <a class="p-tel tel" href="tel:1-253-973-8997">
+                1-253-973-8997
+                <i class="fa fa-phone-square" aria-hidden="true"></i>
+              </a>
+            </div>
+            <span>
+              <a class="u-email email" href="mailto:henders999@gmail.com">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+              </a>
+            </span>
+            <span>
+              <a class="u-url url" href="https://www.linkedin.com/in/scott-henderson-90ab8a47/" target="_blank">
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+              </a>
+            </span>
           </div>
-          <span class="p-locality">Auburn</span>
-          <span class="p-region">WA</span>
-          <span class="p-postal-code">98092-5973</span>
-          <div class="p-country-name">
-            United States
-          </div>
-          <span class="u-email">
-            <a href="mailto:henders999@gmail.com">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-            </a>
-          </span>
-          <span class="p-tel">
-            <a href="tel:1-253-973-8997">
-              <i class="fa fa-phone-square" aria-hidden="true"></i>
-            </a>
-          </span>
-          <span class="u-url">
-            <a href="https://www.linkedin.com/in/scott-henderson-90ab8a47/" target="_blank">
-              <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-            </a>
-          </span>
         </address>
       </div>
     </header>
@@ -146,6 +152,20 @@
       <h1 class="resume-section-header">EDUCATION</h1>
       <section class="resume-education">
         <header class="resume-education-header">
+          <span class="resume-education-what">Certificate in HTML5, CSS3 &amp; Responsive Web Design for Web Development</span>
+          <span class="resume-education-where">University of Washington</span>
+          <span class="resume-education-when">Spring 2017 - Summer 2017</span>
+        </header>
+      </section>
+      <section class="resume-education">
+        <header class="resume-education-header">
+          <span class="resume-education-what">Web Applications in C#</span>
+          <span class="resume-education-where">University of Washington</span>
+          <span class="resume-education-when">Spring 2017</span>
+        </header>
+      </section>
+      <section class="resume-education">
+        <header class="resume-education-header">
           <span class="resume-education-what">Certificate in JavaScript</span>
           <span class="resume-education-where">University of Washington</span>
           <span class="resume-education-when">Fall 2015 - Spring 2016</span>
@@ -198,7 +218,7 @@
         <tr>
           <td>Languages</td>
           <td>
-            C#, C/C++, SQL, FORTRAN, Lisp, Pascal, BASIC, Python
+            C#, C/C++, SQL, JavaScript, FORTRAN, Lisp, Pascal, BASIC, Python
           </td>
         </tr>
         <tr>
@@ -210,7 +230,7 @@
         <tr>
           <td>Software</td>
           <td>
-            Microsoft Visual Studio, Microsoft Office, git, ArcGIS
+            Microsoft Visual Studio, git, ArcGIS
           </td>
         </tr>
       </table>
@@ -222,10 +242,8 @@
       </p>
     </section>
     <footer>
-      <br />
-      <small>
-        Last updated on <time datetime="2017-03-08">March 8, 2017.</time>
-      </small>
+      <div id="last-modified" class="align-right">
+      </div>
     </footer>
   </body>
 </html>
