@@ -1,0 +1,44 @@
+{
+	"parserOptions": {
+		"ecmaVersion": 5,
+		"sourceType": "script",
+		"ecmaFeatures": {
+			"impliedStrict": true
+		}
+	},
+	"env": {
+		"node": true
+	},
+	"rules": {
+		// Possible Errors
+		"comma-dangle": ["error", "never"],
+		"no-cond-assign": ["error", "except-parens"],
+		"no-constant-condition": "error",
+		"no-dupe-keys": "error",
+		"no-duplicate-case": "error",
+		"no-extra-parens": ["error", "all", { "nestedBinaryExpressions": false }],
+		"no-extra-semi": "error",
+		"no-unexpected-multiline": "error",
+		"no-unreachable": "error",
+		"use-isnan": "error",
+		// Best Practices
+		"default-case": "error",
+		"eqeqeq": "error",
+		// Variables
+		"no-undef": "error",
+		"no-unused-vars": ["error", { "vars": "all", "args": "after-used" }],
+		// Stylistic Issues
+		"brace-style": ["error", "1tbs", { "allowSingleLine": false }],
+		"camelcase": ["error", {"properties": "always"}],
+		"comma-style": ["error", "last"],
+		"indent": ["error", "tab"],
+		"newline-after-var": ["error", "always"],
+		"newline-before-return": "error",
+		"no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+		"no-multiple-empty-lines": ["error", {"max": 1}],
+		"no-trailing-spaces": "error",
+		"object-curly-spacing": ["error", "always"],
+		"quotes": ["error", "double"],
+		"semi": ["error", "always"]
+	}
+}
