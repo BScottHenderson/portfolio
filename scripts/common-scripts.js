@@ -1,25 +1,11 @@
 
+//import { NavLink } from "nav-link";   Not supported in Chrome.
+
 var navLinks = [
-  {
-    "target": "index.html",
-    "label": "Home",
-    "externalLink": false
-  },
-  {
-    "target": "resume.html",
-    "label": "Résumé",
-    "externalLink": true
-  },
-  {
-    "target": "responsive-web-design.html",
-    "label": "Responsive Web Design",
-    "externalLink": false
-  },
-  {
-    "target": "css-position-attribute.html",
-    "label": "CSS Position Attribute",
-    "externalLink": false
-  }
+  new NavLink({ target: "index.html", label: "Home", inHtmlDir: false }),
+  new NavLink({ target: "resume.html", label: "Résumé", externalLink: true }),
+  new NavLink({ target: "responsive-web-design.html", label: "Responsive Web Design" }),
+  new NavLink({ target: "css-position-attribute.html", label: "CSS Position Attribute" })
 ];
 
 var monthNames = [
@@ -40,9 +26,7 @@ var monthNames = [
 $(document).ready(function() {
 
   // Add <nav> section to page-header.
-  var homePage =
-    window.location.pathname.split("/").pop() == navLinks[0].target;
-  $("header.page-header").prepend(constructNavElement(homePage));
+  $("header.page-header").prepend(createNavElement(isRootDir(window.location.pathname)));
 
   // Update any elements with the "current-month" id to the current month.
   var today = new Date();
@@ -60,43 +44,36 @@ $(document).ready(function() {
     monthNames[month] + " " + day + ", " + year + "</time></small>");
 });
 
-/*
-  <a href="./index.html" class="link">Home</a>
-  <a href="./html/resume.html" target="_blank" class="external-link">Résumé<span>Opens a new window</span></a>
-  <a href="./html/responsive-web-design.html" class="link">Responsive Web Design</a>
-  <a href="./html/css-position-attribute.html" class="link">CSS Position Attribute</a>
-*/
+function isRootDir (pathName) {
 
-function constructNavElement (homePage) {
+  var isRootDir = false;
 
-  var navSection = "<nav>";
-
-  for (var i = 0; i < navLinks.length; ++i) {
-
-    navSection += "<a href='";
-
-    // The location of the target file depends on whether or
-    // not the current document is the home page.  The home
-    // page lives in the root directory, all others live in
-    // the html subdirectory.
-    navSection +=
-      (homePage
-        ? ((i == 0) ? "." : "./html")
-        : ((i == 0) ? ".." : "."))
-    navSection += "/" + navLinks[i].target + "'";
-
-    // Special handling for the 'external-link' class.
-    if (navLinks[i].externalLink) {
-      navSection += " target='_blank' class='link external-link'>" + navLinks[i].label;
-      navSection += "<span>Opens a new window</span>";
-    } else {
-      navSection += " class='link'>" + navLinks[i].label;
+  // If the path is just '/' then assume it's the root.
+  if (pathName == "/") {
+    isRootDir = true;
+  } else {
+    // Get the last element from the path (i.e., the file name) and split
+    // it into parts by '.' so we can remove the file extension.  Why?
+    // Just in case the default page name is index.htm rather than index.html
+    var fileNameParts = pathName.split("/").pop().split(".");
+    var fileNameNoExt = fileNameParts.slice(0, fileNameParts.length - 1).join("");
+    if (fileNameNoExt == "index") {
+      isRootDir = true;
     }
-
-    navSection += "</a>";
   }
 
-  navSection += "</nav";
+  return isRootDir;
+}
 
-  return navSection;
+function createNavElement (inRootDir) {
+
+  var nav = document.createElement("nav");
+
+  // Add an anchor element for each link in the array.
+  for (var i = 0; i < navLinks.length; ++i) {
+    var anchor = navLinks[i].createAnchorElement(inRootDir);
+    nav.appendChild(anchor);
+  }
+
+  return nav;
 }
