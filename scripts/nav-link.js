@@ -1,3 +1,5 @@
+/* eslint-env browser */
+/* exported NavLink */
 
 class NavLink {
 
@@ -19,10 +21,11 @@ class NavLink {
     // page lives in the root directory, all others live in
     // the html subdirectory.
     var href =
-      (inRootDir
-        ? (this.inHtmlDir ? "./html" : ".")
-        : (this.inHtmlDir ? "." : ".."))
+      inRootDir
+        ? this.inHtmlDir ? "./html" : "."
+        : this.inHtmlDir ? "." : ".."
       + "/" + this.target;
+
     anchor.setAttribute("href", href);
 
     // Special handling for the 'external-link' class.
@@ -35,6 +38,7 @@ class NavLink {
       // anchor.
       var span = document.createElement("span");
       var spanText = document.createTextNode("Opens a new window");
+
       span.appendChild(spanText);
       anchor.appendChild(span);
     } else {
@@ -43,6 +47,7 @@ class NavLink {
 
     // Add a label for the anchor (this is what the user sees).
     var anchorLabel = document.createTextNode(this.label);
+
     anchor.appendChild(anchorLabel);
 
     return anchor;
