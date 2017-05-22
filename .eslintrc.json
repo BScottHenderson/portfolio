@@ -1,6 +1,6 @@
 {
 	"parserOptions": {
-		"ecmaVersion": 5,
+		"ecmaVersion": 2015,
 		"sourceType": "script",
 		"ecmaFeatures": {
 			"impliedStrict": true
@@ -31,7 +31,7 @@
 		"brace-style": ["error", "1tbs", { "allowSingleLine": false }],
 		"camelcase": ["error", {"properties": "always"}],
 		"comma-style": ["error", "last"],
-		"indent": ["error", "tab"],
+		"indent": ["error", 2],
 		"newline-after-var": ["error", "always"],
 		"newline-before-return": "error",
 		"no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
