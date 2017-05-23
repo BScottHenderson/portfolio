@@ -20,9 +20,61 @@
       <h1>The CSS Position Attribute</h1>
     </header>
     <main>
-      <p>
-        Different values for CSS ‘position’ attribute - what are they, how do they work?
-      </p>
+      <section>
+        <h3>What are the different values for the CSS <i>position</i> attribute? How do they work?</h3>
+        <p>
+          The CSS <i>position</i> attribute can have one of several different values.
+        </p>
+        <ul>
+          <li>
+            <b>static</b>
+            <p>
+              This is the default value for the <i>position</i> attribute.  The element is positioned in the normal flow of elements on the HTML page.
+            </p>
+            <p>
+              The top, bottom, left and right attributes do not apply to static elements.
+            </p>
+          </li>
+          <li>
+            <b>relative</b>
+            <p>
+              The top, bottom, left and right attributes are used to position the element relative to its normal position in the flow.  Other elements are positioned to leave space for the relatively-positioned element as though it were in its normal position.  They are <em>not</em> adjusted to fill in any gaps that may result from the relative positioning.
+            </p>
+          </li>
+          <li>
+            <b>absolute</b>
+            <p>
+              The top, bottom, left and right attributes are used to position the element relative to its closest positioned ancestor.  If the absolute-positioned element has no positioned ancestors then it is positioned relative to the initial containing block (e.g., the document body).  Other elements are positioned as though the absolute-positioned element were not present.
+            </p>
+          </li>
+          <li>
+            <b>fixed</b>
+            <p>
+              The top, bottom, left and right attributes are used to position the element relative to the viewport.  Other elements are positioned as though the fixed-positioned element were not present.
+            </p>
+          </li>
+          <li>
+            <b>sticky</b>
+            <p>
+              <q>Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until it crosses a specified threshold, at which point it is treated as fixed positioned.</q>
+              <cite>MDN</cite>
+            </p>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>Overlapping Elements</h3>
+        <p>
+          Any positioned element may overlap other elements.  The <i>z-index</i> property can be used to specify which elements appear over other elements.  Elements are displayed in increasing order by <i>z-index</i> value so that the highest <i>z-index</i> value will be displayed last and therefore on top of other elements.  A <i>z-index</i> attribute value may be negative.
+        </p>
+      </section>
+      <section>
+        <h3>References</h3>
+        <nav>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">MDN</a>
+          <a href="https://www.w3schools.com/css/css_positioning.asp">W3 Schools</a>
+        </nav>
+      </section>
     </main>
     <footer>
       <div id="last-modified" class="align-right"></div>
