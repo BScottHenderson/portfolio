@@ -8,7 +8,11 @@ html {
   padding: 1rem;
 }
 
-nav {
+nav a {
+  display: block;
+}
+
+header.page-header nav {
   display: flex;
   justify-content: space-around;
   font-size: 1.25rem;
