@@ -21,9 +21,9 @@ class NavLink {
     // page lives in the root directory, all others live in
     // the html subdirectory.
     var href =
-      inRootDir
+      (inRootDir
         ? this.inHtmlDir ? "./html" : "."
-        : this.inHtmlDir ? "." : ".."
+        : this.inHtmlDir ? "." : "..")
       + "/" + this.target;
 
     anchor.setAttribute("href", href);
