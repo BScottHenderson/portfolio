@@ -70,6 +70,9 @@ class HobbyImageSection {
     var anchorText = document.createTextNode(this.name);
 
     anchor.setAttribute("href", "#" + this.id);
+    // The "auto-expand-details" attribute is used to indicate links
+    // that should automatically expand the Hobby Details section.
+    anchor.setAttribute("auto-expand-details", "true");
     anchor.appendChild(anchorText);
 
     return anchor;
