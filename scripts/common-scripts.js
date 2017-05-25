@@ -231,7 +231,13 @@ function addHobbyElements() {
   if (!ul)
     return;
 
-  var addDivHere = ul;
+  // Enclose hobby details (e.g., pictures) in a details element.
+  var details = document.createElement("details");
+  var detailsSummary = document.createElement("summary");
+  var detailsSummaryText = document.createTextNode("Hobby Details");
+
+  detailsSummary.appendChild(detailsSummaryText);
+  details.appendChild(detailsSummary);
 
   // We're building two separate areas of the document here:
   // 1. A list of list elements to be included as children of the selected element.
@@ -241,7 +247,15 @@ function addHobbyElements() {
     var div = hobbyArray[i].createDivElement();
 
     ul.appendChild(li);
-    addDivHere.after(div);
-    addDivHere = div;
+    details.appendChild(div);
   }
+
+  ul.after(details);
+
+  // Since our in-page links won't work if the details element
+  // is closed we'll just open it when the user clicks on a link.
+  $("[auto-expand-details]").on("click", function () {
+    //$( $(this).attr("href") ).trigger("click");
+    details.setAttribute("open", "open");
+  });
 }
