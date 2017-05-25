@@ -1,5 +1,47 @@
 /* eslint-env browser */
-/* exported GitHubProject */
+/* exported Projects, GitHubProject */
+/* global _projects:false */
+
+class Projects {
+
+  constructor(params) {
+    params = params === undefined ? {} : params;
+    this.name = params.name === undefined ? "" : params.name;
+    this.projectArray = [
+      new GitHubProject({
+        name: "HTML5 &amp; CSS3 Mockup Practice",
+        repo: "mockup-practice"
+      }),
+      new GitHubProject({
+        name: "STP Archery",
+        repo: "stp-archery"
+      }),
+      new GitHubProject({
+        name: "Winter Wear Warehouse",
+        repo: "html200-ecomm-spr17"
+      })
+    ];
+  }
+
+  createProjectElements() {
+
+    var h2 = document.createElement("h2");
+    var h2Text = document.createTextNode(this.name);
+
+    h2.appendChild(h2Text);
+
+    var ul = document.createElement("ul");
+
+    for (var i = 0; i < this.projectArray.length; ++i) {
+      var li = this.projectArray[i].createListElement();
+
+      ul.appendChild(li);
+    }
+
+    return [h2, ul];
+  }
+
+}
 
 class GitHubProject {
 
@@ -42,3 +84,5 @@ class GitHubProject {
   }
 
 }
+
+var _projects = new Projects({ name: "Projects" });

@@ -1,5 +1,57 @@
 /* eslint-env browser */
-/* exported NavLink */
+/* exported NavLinks, NavLink */
+/* global _navLinks:false */
+
+class NavLinks {
+
+  constructor(params) {
+    params = params === undefined ? {} : params;
+    this.name = params.name === undefined ? "" : params.name;
+    this.navLinkArray = [
+      new NavLink({ target: "index.html", label: "Home", inHtmlDir: false }),
+      new NavLink({ target: "resume.html", label: "Résumé", externalLink: true }),
+      new NavLink({ target: "responsive-web-design.html", label: "Responsive Web Design" }),
+      new NavLink({ target: "css-position-attribute.html", label: "CSS Position Attribute" })
+    ];
+  }
+
+  createNavElement(currentPagePathName) {
+
+    var nav = document.createElement("nav");
+
+    // Add an anchor element for each link in the array.
+    for (var i = 0; i < this.navLinkArray.length; ++i) {
+      var inRootDir = this.isRootDir(currentPagePathName);
+      var anchor = this.navLinkArray[i].createAnchorElement(inRootDir);
+
+      nav.appendChild(anchor);
+    }
+
+    return nav;
+  }
+}
+
+NavLinks.prototype.isRootDir = function(pathName) {
+
+  var isRootDir = false;
+
+  // If the path is just '/' then assume it's the root.
+  if (pathName === "/") {
+    isRootDir = true;
+  } else {
+    // Get the last element from the path (i.e., the file name) and split
+    // it into parts by '.' so we can remove the file extension.  Why?
+    // Just in case the default page name is index.htm rather than index.html
+    var fileNameParts = pathName.split("/").pop().split(".");
+    var fileNameNoExt = fileNameParts.slice(0, fileNameParts.length - 1).join("");
+
+    if (fileNameNoExt === "index") {
+      isRootDir = true;
+    }
+  }
+
+  return isRootDir;
+};
 
 class NavLink {
 
@@ -54,3 +106,5 @@ class NavLink {
   }
 
 }
+
+var _navLinks = new NavLinks();
