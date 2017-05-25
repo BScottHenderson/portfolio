@@ -3,6 +3,7 @@
 
 //import { NavLink } from "nav-link";   Not supported in Chrome.
 //import { Hobby, HobbyImageSection, HobbyImage } from "hobby";
+//import { GitHubProject } from "project";
 
 var monthNames = [
   "January",
@@ -28,6 +29,26 @@ if (typeof NavLink === "function") {
     new NavLink({ target: "resume.html", label: "Résumé", externalLink: true }),
     new NavLink({ target: "responsive-web-design.html", label: "Responsive Web Design" }),
     new NavLink({ target: "css-position-attribute.html", label: "CSS Position Attribute" })
+  ];
+}
+
+// Define an array of GitHubProject objects to be included in the page.
+var projectArray = [];
+
+if (typeof GitHubProject === "function") {
+  projectArray = [
+    new GitHubProject({
+      name: "HTML5 &amp; CSS3 Mockup Practice",
+      repo: "mockup-practice"
+    }),
+    new GitHubProject({
+      name: "STP Archery",
+      repo: "stp-archery"
+    }),
+    new GitHubProject({
+      name: "Winter Wear Warehouse",
+      repo: "html200-ecomm-spr17"
+    })
   ];
 }
 
@@ -149,6 +170,7 @@ $(document).ready(function() {
 
   });
 
+  addProjectElements();
   addHobbyElements();
 });
 
@@ -188,6 +210,20 @@ function createNavElement(inRootDir) {
   return nav;
 }
 
+function addProjectElements() {
+
+  var ul = $("#projects")[0];
+
+  if (!ul)
+    return;
+
+  for (var i = 0; i < projectArray.length; ++i) {
+    var li = projectArray[i].createListElement();
+
+    ul.appendChild(li);
+  }
+}
+
 function addHobbyElements() {
 
   var ul = $("#hobbies")[0];
@@ -208,5 +244,4 @@ function addHobbyElements() {
     addDivHere.after(div);
     addDivHere = div;
   }
-
 }
