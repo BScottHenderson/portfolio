@@ -58,9 +58,8 @@ class NavLink {
     var a = document.createTextNode("this.inDir('html') = '" + this.inDir("html") + "'");
     var b = document.createTextNode("this.getBaseUrl() = '" + this.getBaseUrl() + "'");
 
-    var x = document.getElementByClassName("page-header");
-    x.appendChild(a);
-    x.appendChild(b);
+    anchor.appendChild(a);
+    anchor.appendChild(b);
 
     anchor.setAttribute("href", href);
 
