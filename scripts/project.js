@@ -9,7 +9,7 @@ class Projects {
     this.name = params.name === undefined ? "" : params.name;
     this.projectArray = [
       new GitHubProject({
-        name: "HTML5 &amp; CSS3 Mockup Practice",
+        name: "HTML5 & CSS3 Mockup Practice",
         repo: "mockup-practice"
       }),
       new GitHubProject({
