@@ -99,12 +99,11 @@ NavLink.prototype.getBaseUrl = function () {
 
 NavLink.prototype.inDir = function(dirName) {
 
-  // Use index 1 rather than 0 because the window.location.pathName
-  // will return a string that begins with '/' so the first array
-  // element (index 0) resulting from the call to split() will be empty.
-  var topDir = window.location.pathname.split("/")[1];
+  // Get the immediate parent directory name from the current location.
+  var pathElements = window.location.pathname.split("/");
+  var parentDir = pathElements.length > 1 ? pathElements[pathElements.length - 2] : pathElements[1];
 
-  return topDir === dirName;
+  return parentDir === dirName;
 };
 
 // Remove a hover effect that is otherwise left over when the user
