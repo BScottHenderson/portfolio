@@ -61,6 +61,7 @@ class NavLink {
     if (this.externalLink) {
       anchor.setAttribute("target", "_blank");
       anchor.setAttribute("class", "link external-link");
+      anchor.setAttribute("onclick", "removeHoverEffect(this);");
 
       // The 'external-link' class will display the text in
       // a <span> child node when the mouse hovers over the
@@ -99,5 +100,19 @@ NavLink.prototype.inDir = function(dirName) {
 
   return topDir === dirName;
 };
+
+// Remove a hover effect that is otherwise left over when the user
+// clicks on the link to which the hoever effect has been applied.
+// Temporarily remove the affected <a> element and then add it back
+// again, now without the hover effect.
+function removeHoverEffect(el) {
+  var parent = el.parentNode;
+  var next = el.nextSibling;
+
+  parent.removeChild(el);
+  setTimeout(function() {
+    parent.insertBefore(el, next);
+  }, 0);
+}
 
 var _navLinks = new NavLinks();
