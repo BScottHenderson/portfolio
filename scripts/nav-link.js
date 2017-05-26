@@ -17,6 +17,7 @@ class NavLinks {
 
   createNavElement(currentPagePathName) {
 
+    console.log("createNavElement: currentPagePathName='" + currentPagePathName + "'");
     var nav = document.createElement("nav");
 
     // Add an anchor element for each link in the array.
@@ -33,6 +34,7 @@ class NavLinks {
 
 NavLinks.prototype.isRootDir = function(pathName) {
 
+  console.log("isRootDir: pathName='" + pathName + "'");
   var isRootDir = false;
 
   // If the path is just '/' then assume it's the root.
@@ -45,6 +47,8 @@ NavLinks.prototype.isRootDir = function(pathName) {
     var fileNameParts = pathName.split("/").pop().split(".");
     var fileNameNoExt = fileNameParts.slice(0, fileNameParts.length - 1).join("");
 
+    console.log("isRootDir: fileNameParts='" + fileNameParts + "'");
+    console.log("isRootDir: fileNameNoExt='" + fileNameNoExt + "'");
     if (fileNameNoExt === "index") {
       isRootDir = true;
     }
