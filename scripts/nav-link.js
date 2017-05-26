@@ -55,10 +55,13 @@ class NavLink {
       ? this.inHtmlDir ? this.getBaseUrl() + this.target : this.getBaseUrl() + "../" + this.target
       : this.inHtmlDir ? this.getBaseUrl() + "html/" + this.target : this.getBaseUrl() + this.target;
 
-    var a = "this.inDir('html') = '" + this.inDir("html") + "'";
-    var b = "this.getBaseUrl() = '" + this.getBaseUrl() + "'";
+    var a = document.createTextNode("this.inDir('html') = '" + this.inDir("html") + "'");
+    var b = document.createTextNode("this.getBaseUrl() = '" + this.getBaseUrl() + "'");
 
-    $("body").append(a, b);
+    var x = document.getElementByClassName("page-header");
+    x.appendChild(a);
+    x.appendChild(b);
+
     anchor.setAttribute("href", href);
 
     // Special handling for the 'external-link' class.
