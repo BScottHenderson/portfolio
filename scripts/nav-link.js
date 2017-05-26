@@ -17,6 +17,7 @@ class NavLinks {
 
   createNavElement(currentPagePathName) {
 
+    console.log("createNavElement: currentPagePathName='" + currentPagePathName + "'");
     var nav = document.createElement("nav");
 
     // Add an anchor element for each link in the array.
