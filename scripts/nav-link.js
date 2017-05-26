@@ -11,7 +11,7 @@ class NavLinks {
       new NavLink({ target: "index.html", label: "Home", inHtmlDir: false }),
       new NavLink({ target: "resume.html", label: "Résumé", externalLink: true }),
       new NavLink({ target: "responsive-web-design.html", label: "Responsive Web Design" }),
-      new NavLink({ target: "css-position-attribute.html", label: "CSS Position Attribute" })
+      new NavLink({ target: "css-position-property.html", label: "CSS Position Property" })
     ];
   }
 
