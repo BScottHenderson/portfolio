@@ -17,43 +17,64 @@
   </head>
   <body>
     <header class="page-header">
-      <h1>The CSS Position Attribute</h1>
+      <h1>The CSS Position Property</h1>
     </header>
     <main>
       <section>
-        <h3>What are the different values for the CSS <i>position</i> attribute? How do they work?</h3>
+        <h3>
+          How is the CSS <i>position</i> property used?
+        </h3>
         <p>
-          The CSS <i>position</i> attribute can have one of several different values.
+          HTML elements are, by default, positioned in the order that they appear in the HTML document.  In the "flow" is one term.  Element layout may be modified and elements may even be removed from the flow using one or more of the CSS positioning properties.  Examples include the <i>display</i> property and the <i>float</i> property but our focus for now is the <i>position</i> property.
+        </p>
+        <p>
+          The <i>top</i>, <i>bottom</i>, <i>left</i> and <i>right</i> properties are used to specify a position for an element.  However, these properties are only applicable for certain values of the <i>position</i> property.
+        </p>
+        <h3>What are the different values for the CSS <i>position</i> property? How do they work?</h3>
+        <p>
+          The CSS <i>position</i> property can have one of several different values.
         </p>
         <p>
           <code>position: [static | relative | absolute | fixed | sticky];</code>
+        </p>
+        <p>
+          Elements using the "absolute" or "fixed" values for the <i>display</i> property are considered to use absolute positioning and are removed from the flow.  Elements using the "relative" value for the <i>display</i> property are considered to be relatively posisioned and are <em>not</em> removed from the flow.
         </p>
         <ul>
           <li>
             <b>static</b>
             <p>
-              This is the default value for the <i>position</i> attribute.  The element is positioned in the normal flow of elements on the HTML page.
+              This is the default value for the <i>position</i> property.  The element is positioned in the normal flow of elements on the HTML page.
             </p>
             <p>
-              The top, bottom, left and right attributes do not apply to static elements.
+              The <i>top</i>, <i>bottom</i>, <i>left</i> and <i>right</i> properties do not apply to static elements.
             </p>
           </li>
           <li>
             <b>relative</b>
             <p>
-              The top, bottom, left and right attributes are used to position the element relative to its normal position in the flow.  Other elements are positioned to leave space for the relatively-positioned element as though it were in its normal position.  They are <em>not</em> adjusted to fill in any gaps that may result from the relative positioning.
+              The <i>top</i>, <i>bottom</i>, <i>left</i> and <i>right</i> properties are used to position the element relative to its normal position in the flow.
+            </p>
+            <p>
+              Other elements in the same container are positioned to leave space for the relatively-positioned element as though it were in its normal position in the flow.  The position of other elements is <em>not</em> adjusted to fill in any gaps that may result from the relative positioning.
             </p>
           </li>
           <li>
             <b>absolute</b>
             <p>
-              The top, bottom, left and right attributes are used to position the element relative to its closest positioned ancestor.  If the absolute-positioned element has no positioned ancestors then it is positioned relative to the initial containing block (e.g., the document body).  Other elements are positioned as though the absolute-positioned element were not present.
+              The <i>top</i>, <i>bottom</i>, <i>left</i> and <i>right</i> properties are used to position the element relative to its closest positioned ancestor.  If the absolute-positioned element has no positioned ancestors then it is positioned relative to the initial containing block (e.g., the document body).
+            </p>
+            <p>
+              Other elements in the same container are positioned as though the absolute-positioned element were not present.  The absolute-positioned element is removed from the flow.
             </p>
           </li>
           <li>
             <b>fixed</b>
             <p>
-              The top, bottom, left and right attributes are used to position the element relative to the viewport.  Other elements are positioned as though the fixed-positioned element were not present.
+              The <i>top</i>, <i>bottom</i>, <i>left</i> and <i>right</i> properties are used to position the element relative to the viewport.
+            </p>
+            <p>
+              Other elements are positioned as though the fixed-positioned element were not present.  The fixed-positioned element is removed from the flow.
             </p>
           </li>
           <li>
@@ -62,13 +83,16 @@
               <q>Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until it crosses a specified threshold, at which point it is treated as fixed positioned.</q>
               <cite>MDN</cite>
             </p>
+            <p>
+              To make sticky positioning work, a threshold must be specified using one or more of the <i>top</i>, <i>bottom</i>, <i>left</i> and <i>right</i> properties.  The element will be relatively positioned until the threshold is reached (e.g., via the user scrolling the viewport) at which point the element will be positioned as fixed.
+            </p>
           </li>
         </ul>
       </section>
       <section>
         <h3>Overlapping Elements</h3>
         <p>
-          Any positioned element may overlap other elements.  The <i>z-index</i> property can be used to specify which elements appear over other elements.  Elements are displayed in increasing order by <i>z-index</i> value so that the highest <i>z-index</i> value will be displayed last and therefore on top of other elements.  A <i>z-index</i> attribute value may be negative.
+          Any positioned element may overlap other elements.  The <i>z-index</i> property can be used to specify which elements appear over other elements.  Elements are displayed in increasing order by <i>z-index</i> value so that the highest <i>z-index</i> value will be displayed last and therefore on top of other elements.  A <i>z-index</i> property value may be negative.
         </p>
       </section>
       <section>
