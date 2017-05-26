@@ -15,15 +15,13 @@ class NavLinks {
     ];
   }
 
-  createNavElement(currentPagePathName) {
+  createNavElement() {
 
-    console.log("createNavElement: currentPagePathName='" + currentPagePathName + "'");
     var nav = document.createElement("nav");
 
     // Add an anchor element for each link in the array.
     for (var i = 0; i < this.navLinkArray.length; ++i) {
-      var inRootDir = this.isRootDir(currentPagePathName);
-      var anchor = this.navLinkArray[i].createAnchorElement(inRootDir);
+      var anchor = this.navLinkArray[i].createAnchorElement();
 
       nav.appendChild(anchor);
     }
@@ -31,31 +29,6 @@ class NavLinks {
     return nav;
   }
 }
-
-NavLinks.prototype.isRootDir = function(pathName) {
-
-  console.log("isRootDir: pathName='" + pathName + "'");
-  var isRootDir = false;
-
-  // If the path is just '/' then assume it's the root.
-  if (pathName === "/") {
-    isRootDir = true;
-  } else {
-    // Get the last element from the path (i.e., the file name) and split
-    // it into parts by '.' so we can remove the file extension.  Why?
-    // Just in case the default page name is index.htm rather than index.html
-    var fileNameParts = pathName.split("/").pop().split(".");
-    var fileNameNoExt = fileNameParts.slice(0, fileNameParts.length - 1).join("");
-
-    console.log("isRootDir: fileNameParts='" + fileNameParts + "'");
-    console.log("isRootDir: fileNameNoExt='" + fileNameNoExt + "'");
-    if (fileNameNoExt === "index") {
-      isRootDir = true;
-    }
-  }
-
-  return isRootDir;
-};
 
 class NavLink {
 
@@ -68,19 +41,14 @@ class NavLink {
     this.inHtmlDir    = params.inHtmlDir    === undefined ? true  : params.inHtmlDir;
   }
 
-  createAnchorElement(inRootDir) {
+  createAnchorElement() {
 
     var anchor = document.createElement("a");
 
-    // The location of the target file depends on whether or
-    // not the current document is the home page.  The home
-    // page lives in the root directory, all others live in
-    // the html subdirectory.
     var href =
-      (inRootDir
-        ? this.inHtmlDir ? "./html" : "."
-        : this.inHtmlDir ? "." : "..")
-      + "/" + this.target;
+      this.getBaseUrl()
+      + (this.inHtmlDir ? "html/" : "")
+      + this.target;
 
     anchor.setAttribute("href", href);
 
@@ -110,5 +78,11 @@ class NavLink {
   }
 
 }
+
+NavLink.prototype.getBaseUrl = function () {
+  var re = new RegExp(/^.*\//);
+
+  return re.exec(window.location.href);
+};
 
 var _navLinks = new NavLinks();

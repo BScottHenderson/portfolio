@@ -24,7 +24,7 @@ var monthNames = [
 $(document).ready(function() {
 
   // Add <nav> section to page-header.
-  $("header.page-header").prepend(_navLinks.createNavElement(window.location.pathname));
+  $("header.page-header").prepend(_navLinks.createNavElement());
 
   // Update any elements with the "current-month" id to the current month.
   $("#current-month").text(function() {
