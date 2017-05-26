@@ -45,10 +45,15 @@ class NavLink {
 
     var anchor = document.createElement("a");
 
+    // The href to the target file depends on whether or not
+    // the current file is in the 'html' directory and whether
+    // or not the target file is in the 'html' directory.
+    // Assume that all HTML files are either in the root directory
+    // or the 'html' directory.
     var href =
-      this.getBaseUrl()
-      + (this.inHtmlDir ? "html/" : "")
-      + this.target;
+      this.inDir("html")
+      ? this.inHtmlDir ? this.getBaseUrl() + this.target : this.getBaseUrl() + "../" + this.target
+      : this.inHtmlDir ? this.getBaseUrl() + "html/" + this.target : this.getBaseUrl() + this.target;
 
     anchor.setAttribute("href", href);
 
@@ -83,6 +88,16 @@ NavLink.prototype.getBaseUrl = function () {
   var re = new RegExp(/^.*\//);
 
   return re.exec(window.location.href);
+};
+
+NavLink.prototype.inDir = function(dirName) {
+
+  // Use index 1 rather than 0 because the window.location.pathName
+  // will return a string that begins with '/' so the first array
+  // element (index 0) resulting from the call to split() will be empty.
+  var topDir = window.location.pathname.split("/")[1];
+
+  return topDir === dirName;
 };
 
 var _navLinks = new NavLinks();
