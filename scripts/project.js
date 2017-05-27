@@ -24,7 +24,13 @@ class Projects {
   }
 
   createProjectElements() {
-
+    // <h2>Projects</h2>
+    // <ul>
+    //   <project 0 list element />
+    //   <project 1 list element />
+    //   ...
+    //   <project 2 list element />
+    // </ul>
     var h2 = document.createElement("h2");
     var h2Text = document.createTextNode(this.name);
 
@@ -52,7 +58,12 @@ class GitHubProject {
   }
 
   createListElement() {
-
+    // <a href="https://bscotthenderson.github.io/mockup-practice/" target="_blank">
+    //   HTML5 &amp; CSS3 Mockup Practice
+    // </a>
+    // <a href="https://github.com/BScottHenderson/mockup-practice" target="_blank">
+    //   <img class="logo" src="images/GitHub-Mark-32px.png" alt="GitHub" />
+    // </a>
     var li = document.createElement("li");
 
     // Add an anchor element for the GitHub Pages site.

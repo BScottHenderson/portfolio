@@ -93,7 +93,26 @@ class Hobbies {
   }
 
   createHobbyElements() {
-
+    // <h2>Hobbies</h2>
+    // <ul>
+    //   <li>
+    //     hobby 0 name
+    //     <ul>
+    //       <hobby 0 list element 0 />
+    //       <hobby 0 list element 1 />
+    //       ...
+    //       <hobby 0 list element n />
+    //     </ul>
+    //   </li>
+    //   ...
+    // </ul>
+    // <details id="hobby-details">
+    //   <summary>Hobby Details</summary>
+    //   <hobby 0 div>
+    //   <hobby 1 div>
+    //   ...
+    //   <hobby n div>
+    // </details>
     var h2 = document.createElement("h2");
     var h2Text = document.createTextNode(this.name);
 
@@ -145,7 +164,15 @@ class Hobby {
   }
 
   createListElement() {
-
+    // <li>
+    //   Golf Courses
+    //   <ul>
+    //     <li><image section anchor 0></li>
+    //     <li><image section anchor 1></li>
+    //     ...
+    //     <li><image section anchor n></li>
+    //   </ul>
+    // </li>
     var li = document.createElement("li");
     var liText = document.createTextNode(this.name);
 
@@ -154,10 +181,8 @@ class Hobby {
     var ul = document.createElement("ul");
 
     for (var i = 0; i < this.imageSectionArray.length; ++i) {
-      var childLi = document.createElement("li");
-      var anchor = this.imageSectionArray[i].createAnchorElement();
+      var childLi = this.imageSectionArray[i].createListElement();
 
-      childLi.appendChild(anchor);
       ul.appendChild(childLi);
     }
 
@@ -167,7 +192,13 @@ class Hobby {
   }
 
   createDivElement() {
-
+    // <div id="golf-courses">
+    //   <h3>Golf Courses</h3>
+    //   <image section 0 />
+    //   <image section 1 />
+    //   ...
+    //   <image section n />
+    // </div>
     var div = document.createElement("div");
 
     div.setAttribute("id", this.id);
@@ -198,8 +229,9 @@ class HobbyImageSection {
     this.imageArray = params.imageArray === undefined ? [] : params.imageArray;
   }
 
-  createAnchorElement() {
-
+  createListElement() {
+    // <li><a href="#aldarra" auto-expand-details="true">Aldarra Golf Club</a></li>
+    var li = document.createElement("li");
     var anchor = document.createElement("a");
     var anchorText = document.createTextNode(this.name);
 
@@ -209,11 +241,24 @@ class HobbyImageSection {
     anchor.setAttribute("auto-expand-details", "true");
     anchor.appendChild(anchorText);
 
-    return anchor;
+    li.appendChild(anchor);
+
+    return li;
   }
 
   createSectionElement() {
-
+    // <section id="aldarra">
+    //   <h4>
+    //     Aldarra Golf Club
+    //     <a href="https://www.google.com/maps/place/Aldarra+Golf+Club/@47.5848109,-121.9557935,17z/data=!3m1!4b1!4m5!3m4!1s0x54907058a13b0f0d:0xd1615dcbc4da2d0d!8m2!3d47.5848109!4d-121.9536048" target="_blank">
+    //       <img class="logo" src="images/RTGG4pBqc.png" alt="Google Maps"/>
+    //     </a>
+    //   </h4>
+    //   <image anchor 0 />
+    //   <image anchor 1 />
+    //   ...
+    //   <image anchor n />
+    // </section>
     var section = document.createElement("section");
 
     section.setAttribute("id", this.id);
@@ -255,7 +300,9 @@ class HobbyImage {
   }
 
   createAnchorElement(altText) {
-
+    // <a target="_blank" href="images/golf/aldarra/20141002_135756.jpg">
+    //   <img class="camera" src="images/golf/aldarra/20141002_135756-400w.jpg" alt="Aldarra Golf Club" />
+    // </a>
     var anchor = document.createElement("a");
 
     anchor.setAttribute("target", "_blank");  // Open in new tab.

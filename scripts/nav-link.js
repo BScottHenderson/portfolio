@@ -1,5 +1,5 @@
 /* eslint-env browser */
-/* exported NavLinks, NavLink */
+/* exported NavLinks, NavLink, removeHoverEffect */
 /* global _navLinks:false */
 
 class NavLinks {
@@ -16,7 +16,12 @@ class NavLinks {
   }
 
   createNavElement() {
-
+    // <nav>
+    //   <anchor 0 />
+    //   <anchor 1 />
+    //   ...
+    //   <anchor n />
+    // </nav>
     var nav = document.createElement("nav");
 
     // Add an anchor element for each link in the array.
@@ -42,7 +47,10 @@ class NavLink {
   }
 
   createAnchorElement() {
-
+    // <a href=["html/"] + "index.html" [class="link"][target="_blank" class="link external-link" onclick="removeHoverEffect(this);"]>
+    //   [<span>Opens a new window</span>]
+    //   Home
+    // </a>
     var anchor = document.createElement("a");
 
     // The href to the target file depends on whether or not
